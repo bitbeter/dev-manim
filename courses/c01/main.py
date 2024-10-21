@@ -22,7 +22,7 @@ class CreateCircle(Slide):
 
         self.next_slide(loop=True)
 
-        self.play(*[Create(c, scale_value=1.9) for c in animations])
+        self.play(*[Wiggle(c, scale_value=1.9) for c in animations])
 
 
         # self.play(MoveAlongPath(dot, circle), run_time=2, rate_func=linear)
