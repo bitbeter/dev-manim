@@ -22,15 +22,15 @@ class CreateCircle(Slide):
             Square(color=c) for p, c in zip(points, colors)
         ]
 
-        self.play(*[Create(c) for c in circles])
+        self.play(Create(c) for c in circles)
 
         self.next_slide()
 
-        self.play(*[Transform(c, s) for c, s in zip(circles, squares)])
+        self.play(Transform(c, s) for c, s in zip(circles, squares))
 
         self.next_slide(loop=True)
 
-        self.play(*[Wiggle(c, scale_value=1.9) for c in circles])
+        self.play(Wiggle(c, scale_value=1.9) for c in circles)
 
 
         # self.play(MoveAlongPath(dot, circle), run_time=2, rate_func=linear)
