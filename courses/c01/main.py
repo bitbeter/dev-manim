@@ -1,29 +1,29 @@
 from manim import *
-# from manim_slides.slide import Slide
+from manim_slides.slide import Slide
 from manim_dsa import *
 
 
-class CreateCircle(Scene):
+class CreateCircle(Slide):
     def construct(self):
-        # epsilon = .1
-        # n_points = 10
-        #
-        # states = [
-        #     [0 + n * epsilon, 0 + n * epsilon, 0 + n * epsilon]
-        #     for n in range(n_points)
-        # ]
-        # colors = color_gradient([BLUE_E, YELLOW], len(states))
-        #
-        # animations = [
-        #     Circle(color=n, arc_center=state) for state, n in zip(states, colors)
-        # ]
-        #
-        # self.play(*[Create(c) for c in animations])
-        #
-        #
-        # # self.next_slide(loop=True)
-        #
-        # self.play(*[Wiggle(c, scale_value=1.9) for c in animations])
+        epsilon = .1
+        n_points = 10
+
+        states = [
+            [0 + n * epsilon, 0 + n * epsilon, 0 + n * epsilon]
+            for n in range(n_points)
+        ]
+        colors = color_gradient([BLUE_E, YELLOW], len(states))
+
+        animations = [
+            Circle(color=n, arc_center=state) for state, n in zip(states, colors)
+        ]
+
+        self.play(*[Create(c) for c in animations])
+
+
+        self.next_slide(loop=True)
+
+        self.play(*[Wiggle(c, scale_value=1.9) for c in animations])
 
 
         # self.play(MoveAlongPath(dot, circle), run_time=2, rate_func=linear)
@@ -53,6 +53,8 @@ class CreateCircle(Scene):
         # self.play( # Animate group without component
         #     (gr-circle_red).animate.shift(RIGHT)
         # )
+
+        self.next_slide()
 
         graph = {
             'A': [('C', 11), ('D', 7)],
